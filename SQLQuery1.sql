@@ -32,3 +32,6 @@ select Gender,AVG(salary) from employee_payroll Group by Gender;
 select MIN(Salary) from employee_payroll where Gender='F';
 select Max(Salary) from employee_payroll where Gender='F';
 Select COUNT(*) from employee_payroll Group by Gender;
+--UC8
+Alter table employee_payroll add Phone varchar (10),Address VarChar(100);
+Alter table employee_payroll add Department VarChar(20);
