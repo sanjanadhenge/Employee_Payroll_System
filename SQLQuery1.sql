@@ -35,3 +35,10 @@ Select COUNT(*) from employee_payroll Group by Gender;
 --UC8
 Alter table employee_payroll add Phone varchar (10),Address VarChar(100);
 Alter table employee_payroll add Department VarChar(20);
+--UC9
+Alter table employee_payroll add BasicPay Bigint,Deduction Bigint,TaxeblePay Bigint,Incometax Bigint,NetPay Bigint;
+Update employee_payroll set Phone='9568135', Address='MH',BasicPay='500',Deduction = '600',TaxeblePay='700',Incometax='670',NetPay='980' where Name='Sanjana';
+Update employee_payroll set Phone='9843954',Address='Delhi', BasicPay='500',Deduction = '600',TaxeblePay='700',Incometax='670',NetPay='980' where Name='Radha';
+Update employee_payroll set Phone='9568135', Address='MH',BasicPay='500',Deduction = '600',TaxeblePay='700',Incometax='670',NetPay='980' where Name='Rutuja';
+Update employee_payroll set Phone='9843954',Address='Delhi', BasicPay='500',Deduction = '600',TaxeblePay='700',Incometax='670',NetPay='980' where Name='Smita';
+Update employee_payroll set Phone='9568135', Address='MH',BasicPay='500',Deduction = '600',TaxeblePay='700',Incometax='670',NetPay='980' where Name='Pranali';
