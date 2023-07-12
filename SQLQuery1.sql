@@ -20,9 +20,15 @@ Select * from employee_payroll;
 --UC5
 Select * from employee_payroll where StartDate between cast('2021-07-16'as Date)and CURRENT_TIMESTAMP;
 Alter table employee_payroll add Gender varchar (1);
-
+--UC6
 Update employee_payroll set Gender='F' where Name='Sanjana';
 Update employee_payroll set Gender='F' where Name='Radha';
 Update employee_payroll set Gender='F' where Name='Rutuja';
 Update employee_payroll set Gender='F' where Name='Smita';
 Update employee_payroll set Gender='F' where Name='Pranali';
+--UC7
+select SUM(Salary) from employee_payroll where Gender ='F' Group by Gender;
+select Gender,AVG(salary) from employee_payroll Group by Gender;
+select MIN(Salary) from employee_payroll where Gender='F';
+select Max(Salary) from employee_payroll where Gender='F';
+Select COUNT(*) from employee_payroll Group by Gender;
