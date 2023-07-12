@@ -42,3 +42,6 @@ Update employee_payroll set Phone='9843954',Address='Delhi', BasicPay='500',Dedu
 Update employee_payroll set Phone='9568135', Address='MH',BasicPay='500',Deduction = '600',TaxeblePay='700',Incometax='670',NetPay='980' where Name='Rutuja';
 Update employee_payroll set Phone='9843954',Address='Delhi', BasicPay='500',Deduction = '600',TaxeblePay='700',Incometax='670',NetPay='980' where Name='Smita';
 Update employee_payroll set Phone='9568135', Address='MH',BasicPay='500',Deduction = '600',TaxeblePay='700',Incometax='670',NetPay='980' where Name='Pranali';
+--UC10
+Insert into employee_payroll(Name,Salary, StartDate,Gender,Phone,Address,BasicPay,Deduction,TaxeblePay,Incometax,NetPay,Department) values('Terissa','10000','2021-07-15','F','95984562','MH','1000','500','600','800','900','Sales');
+Insert into employee_payroll(Name,Salary, StartDate,Gender,Phone,Address,BasicPay,Deduction,TaxeblePay,Incometax,NetPay,Department) values('Terissa','10000','2021-07-15','F','95984562','MH','1000','500','600','800','900','Marketing');
