@@ -45,3 +45,15 @@ Update employee_payroll set Phone='9568135', Address='MH',BasicPay='500',Deducti
 --UC10
 Insert into employee_payroll(Name,Salary, StartDate,Gender,Phone,Address,BasicPay,Deduction,TaxeblePay,Incometax,NetPay,Department) values('Terissa','10000','2021-07-15','F','95984562','MH','1000','500','600','800','900','Sales');
 Insert into employee_payroll(Name,Salary, StartDate,Gender,Phone,Address,BasicPay,Deduction,TaxeblePay,Incometax,NetPay,Department) values('Terissa','10000','2021-07-15','F','95984562','MH','1000','500','600','800','900','Marketing');
+--UC11 12
+Alter table employee_payroll drop column Department;
+Create table Department
+(
+ID int Primary Key identity(1,1),
+DeptName VarChar(20),
+EmpID int foreign key REFERENCES employee_payroll(ID)
+);
+
+Insert into Department(DeptName,EmpID) values('sales',1);
+Insert into Department(DeptName,EmpID) values('Marketing',1);
+select * from Department;
