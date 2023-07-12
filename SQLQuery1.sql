@@ -17,3 +17,5 @@ Insert into employee_payroll(Name,Salary, StartDate) values('Smita','40000','202
 Insert into employee_payroll(Name,Salary, StartDate) values('Pranali','50000','2021-07-19');
 --UC4
 Select * from employee_payroll;
+--UC5
+Select * from employee_payroll where StartDate between cast('2021-07-16'as Date)and CURRENT_TIMESTAMP;
