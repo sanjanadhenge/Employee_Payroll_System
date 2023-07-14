@@ -110,15 +110,16 @@ namespace Employee_Payroll
 
             }
         }
-        public void UpdateEmployee(int id, long Salary)
+        public void UpdateEmployee(int id, long BasicPay)
         {
             using (this.connection)
             {
 
-                SqlCommand command = new SqlCommand("UpdateEmp", this.connection);
+                SqlCommand command = new SqlCommand("UpdateEmpBasicPay", this.connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@EmpId", id);
-                command.Parameters.AddWithValue("@Salary", Salary);
+                //command.Parameters.AddWithValue("@Salary", Salary);
+                command.Parameters.AddWithValue("@BasicPay", BasicPay);
                 this.connection.Open();
                 var result = command.ExecuteNonQuery();
                 this.connection.Close();
