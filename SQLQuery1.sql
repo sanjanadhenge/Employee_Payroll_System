@@ -120,3 +120,4 @@ as
 begin
 Insert into payroll_details values(@Deduction ,@TaxeblePay ,@Incometax ,@NetPay )
 End;
+--ER Dia
