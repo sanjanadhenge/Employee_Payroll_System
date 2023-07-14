@@ -12,6 +12,7 @@ namespace Employee_Payroll
     {
         public static string connectionstring = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=payroll_service";
         SqlConnection connection = new SqlConnection(connectionstring);
+        List<Employee> list = new List<Employee>();
         public void GetAllRecords()
         {
             Employee employee = new Employee();
@@ -40,6 +41,7 @@ namespace Employee_Payroll
                             employee.TaxablePay = read.GetInt64(9);
                             employee.Incometax = read.GetInt64(10);
                             employee.NetPay = read.GetInt64(11);
+                            list.Add(employee);
                             Console.WriteLine(employee.ID + "\n" + employee.Name + "\n" + employee.Salary + "\n" + employee.StartDate + "\n" + employee.Gender + "\n" + employee.Phone + "\n" + employee.Address + "\n" + employee.BasicPay + "\n" + employee.Deductions + "\n" + employee.TaxablePay + "\n" + employee.Incometax + "\n" + employee.NetPay);
                         }
 
@@ -54,6 +56,25 @@ namespace Employee_Payroll
             {
                 throw new Exception(ex.Message);
             }
+        }
+        public void CalulateRecords()
+        {
+            long sum = 0;
+            GetAllRecords();
+            var result = list.Where(x => x.Gender.Equals("F")).ToList();
+            List<long> salary = new List<long>();
+            foreach (var record in result)
+            {
+
+                sum = sum + record.Salary;
+                salary.Add(record.Salary);
+            }
+            Console.WriteLine("Sum of salary of female is " + sum);
+            Console.WriteLine("AVG of salary of female is " + sum / list.Count);
+
+            Console.WriteLine("Max of salary of female is " + salary.Max());
+            Console.WriteLine("Min of salary of female is " + salary.Min());
+            Console.WriteLine("count of female is " + list.Count);
         }
         public void AddEmployee(Employee employee)
         {
@@ -181,6 +202,8 @@ namespace Employee_Payroll
                 throw new Exception(ex.Message);
             }
         }
+
+
     }
 
 }
