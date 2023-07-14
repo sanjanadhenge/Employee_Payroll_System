@@ -41,7 +41,7 @@ namespace Employee_Payroll
                         operation.AddPayRoll();
                         break;
                     case 3:
-                        operation.DeleteEmployee(10);
+                        operation.DeleteEmployee(10);//Remove Employee
                         break;
                     case 4:
                         operation.UpdateEmployee("Terisa", 30000);
