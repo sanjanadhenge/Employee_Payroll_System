@@ -57,3 +57,43 @@ EmpID int foreign key REFERENCES employee_payroll(ID)
 Insert into Department(DeptName,EmpID) values('sales',1);
 Insert into Department(DeptName,EmpID) values('Marketing',1);
 select * from Department;
+Go
+Create Procedure AddEmployee
+(
+@Name Varchar(30),
+@Salary Bigint,
+@StartDate Date,
+@Gender Varchar(1),
+@Phone VarChar(10),
+@Address VarChar(100),
+@BasicPay Bigint,
+@Deduction Bigint,
+@TaxeblePay Bigint,
+@Incometax Bigint,
+@NetPay Bigint
+
+)
+as
+begin
+Insert into employee_payroll values(@Name,@Salary,@StartDate,@Gender,@Phone,@Address,@BasicPay,@Deduction ,@TaxeblePay ,@Incometax ,@NetPay )
+End;
+
+Go
+Create Procedure DeleteEmployee
+(
+@ID int
+)
+as
+begin
+Delete from employee_payroll where ID=@ID;
+End;
+Go
+Create Procedure UpdateEmp
+(
+@EmpId int,
+@Name VarChar(30)
+)
+as
+begin
+Update employee_payroll set Name = @Name where ID = @EmpId
+End;
