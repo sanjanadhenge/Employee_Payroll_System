@@ -95,5 +95,5 @@ Create Procedure UpdateEmp
 )
 as
 begin
-Update employee_payroll set Name = @Name where ID = @EmpId
+Update employee_payroll set Salary=@Salary where ID = @EmpId
 End;

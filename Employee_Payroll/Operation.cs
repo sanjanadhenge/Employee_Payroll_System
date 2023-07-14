@@ -10,7 +10,6 @@ namespace Employee_Payroll
 
     internal class Operation
     {
-
         public static string connectionstring = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=payroll_service";
         SqlConnection connection = new SqlConnection(connectionstring);
         public void GetAllRecords()
@@ -106,6 +105,30 @@ namespace Employee_Payroll
                 else
                 {
                     Console.WriteLine("Employee deleted UnSucessfully");
+                }
+
+
+            }
+        }
+        public void UpdateEmployee(int id, long Salary)
+        {
+            using (this.connection)
+            {
+
+                SqlCommand command = new SqlCommand("UpdateEmp", this.connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@EmpId", id);
+                command.Parameters.AddWithValue("@Salary", Salary);
+                this.connection.Open();
+                var result = command.ExecuteNonQuery();
+                this.connection.Close();
+                if (result != 0)
+                {
+                    Console.WriteLine("Employee Updated Sucessfully");
+                }
+                else
+                {
+                    Console.WriteLine("Employee Updated  UnSucessfully");
                 }
 
 
