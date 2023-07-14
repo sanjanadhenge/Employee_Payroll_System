@@ -61,6 +61,7 @@ namespace Employee_Payroll
         }
         public void CalulateRecords()
         {
+
             long sum = 0;
             GetAllRecords();
             var result = list.Where(x => x.Gender.Equals("F")).ToList();
@@ -113,6 +114,7 @@ namespace Employee_Payroll
         }
         public void AddPayRoll()
         {
+
             Employee employee = new Employee();
             int a = 1;
             GetAllRecords();
